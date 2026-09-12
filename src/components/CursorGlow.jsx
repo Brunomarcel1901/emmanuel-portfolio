@@ -1,0 +1,2 @@
+import {useEffect} from "react";
+export default function CursorGlow(){useEffect(()=>{if(!window.matchMedia("(pointer: fine)").matches)return;const f=e=>{document.documentElement.style.setProperty("--mx",`${e.clientX}px`);document.documentElement.style.setProperty("--my",`${e.clientY}px`)};window.addEventListener("pointermove",f,{passive:true});return()=>window.removeEventListener("pointermove",f)},[]);return <div className="cursor-glow" aria-hidden="true"/>}
